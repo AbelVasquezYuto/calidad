@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="combo_tipos">
+        <item>Aritmetica</item>
+        <item>Algebra</item>
+        <item>Trigonometria</item>
+        <item>Geometria</item>
+        <item>Lenguaje</item>
+        <item>Literatura</item>
+    </string-array>
+</resources>

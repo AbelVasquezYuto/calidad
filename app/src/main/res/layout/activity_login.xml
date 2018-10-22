@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    android:layout_height="match_parent"
+    tools:context="com.example.abel.houston.ActivityLogin">
+
+    <LinearLayout
+        android:paddingTop="35dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Houston"
+            android:textColor="@color/colorBlanco"
+            android:textSize="50dp" />
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tenemos un problema"
+            android:textColor="@color/colorBlanco"
+            android:textSize="25dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="100dp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp">
+
+        <EditText
+            android:textCursorDrawable="@drawable/cursor_white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+
+            android:textColorHint="@color/colorBlanco"
+            android:textColor="@color/colorBlanco"
+            android:id="@+id/etusuario"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:theme="@style/ContextoBlanco"
+            android:drawableLeft="@drawable/ic_mail_white2_24dp"
+            android:hint="  E-mail" />
+
+        <EditText
+            android:textCursorDrawable="@drawable/cursor_white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/colorBlanco"
+            android:singleLine="true"
+            android:id="@+id/etpass"
+            android:textColorHint="@color/colorBlanco"
+            android:inputType="textPassword"
+            android:theme="@style/ContextoBlanco"
+            android:drawableLeft="@drawable/ic_lock_white2_24dp"
+            android:hint="  Password"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ACCEDER"
+
+            android:textColor="@color/colorPrimary"
+            android:id="@+id/button"
+            android:layout_below="@+id/etpass"
+            android:layout_marginTop="24dp"
+            android:background="@color/colorLogin"
+            android:layout_marginBottom="24dp"/>
+
+        <TextView android:id="@+id/signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:textColor="@color/colorBlanco"
+            android:text="Registrar"
+            android:gravity="center"
+            android:textSize="18dip"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlanco"
+    android:orientation="vertical"
+    tools:context="com.example.abel.houston.ActivityRegister">
+
+    <ImageView
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:id="@+id/usuario_imagen_registro"
+        android:src="@drawable/imagen"
+        android:scaleType="centerCrop"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:paddingTop="20dp">
+
+        <EditText
+            android:id="@+id/nombre_registro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:theme="@style/ContextoNaranja"
+            android:layout_marginTop="1dp"
+            android:drawableLeft="@drawable/ic_person_white_24dp"
+            android:hint=" Nombre"
+            android:inputType="textCapWords|textPersonName"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/colorPrimary"
+            android:textCursorDrawable="@drawable/cursor_orange" />
+
+
+        <EditText
+            android:id="@+id/correo_registro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="1dp"
+            android:theme="@style/ContextoNaranja"
+            android:drawableLeft="@drawable/ic_mail_white_24dp"
+            android:hint=" E-mail"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/colorPrimary"
+            android:textCursorDrawable="@drawable/cursor_orange" />
+
+
+        <EditText
+            android:id="@+id/password_registro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="1dp"
+            android:drawableLeft="@drawable/ic_lock_white_24dp"
+            android:theme="@style/ContextoNaranja"
+            android:hint=" Password"
+            android:inputType="textPassword"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/colorPrimary"
+            android:textCursorDrawable="@drawable/cursor_orange" />
+
+        <EditText
+            android:id="@+id/password_repeat_registro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="1dp"
+            android:drawableLeft="@drawable/ic_lock_white_24dp"
+            android:theme="@style/ContextoNaranja"
+            android:hint=" Repeat Password"
+            android:inputType="textPassword"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/colorPrimary"
+            android:textCursorDrawable="@drawable/cursor_orange" />
+
+
+        <Button
+            android:id="@+id/btn_registro_usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/colorPrimary"
+            android:padding="12dp"
+            android:textColor="@color/colorBlanco"
+            android:text="REGRISTRAR" />
+
+        <TextView
+            android:id="@+id/link_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Regresar"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

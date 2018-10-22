@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlanco"
+    android:orientation="vertical"
+    tools:context="com.example.abel.houston.ActivityAgregarPreguntas">
+
+    <ImageView
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:id="@+id/iv_agregar_pregunta"
+        android:src="@drawable/camara"
+        android:scaleType="centerCrop"/>
+
+    <LinearLayout
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:textColor="@color/colorPrimary"
+            android:textSize="20dp"
+            android:text="Seleccione el tipo de pregunta: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Spinner
+            android:id="@+id/sp_tipos"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"></Spinner>
+
+
+    </LinearLayout>
+
+    <EditText
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/et_descripcion_pregunta"
+        android:theme="@style/ContextoNaranja"
+        android:singleLine="true"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorPrimary"
+        android:textCursorDrawable="@drawable/cursor_orange"
+        android:hint="Descripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:background="@color/colorCeleste"
+        android:textColor="@color/colorBlanco"
+        android:layout_marginTop="20dp"
+        android:id="@+id/btn_agregar_preguntasXD"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="AGREGAR PREGUNTA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

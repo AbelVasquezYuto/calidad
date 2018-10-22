@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBlanco"
+    tools:context="com.example.abel.houston.MainActivity">
+
+    <LinearLayout
+        android:background="@drawable/fondo"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="130dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/imageView_main"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:srcCompat="@drawable/imagen" />
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_marginLeft="120dp"
+                android:layout_marginTop="30dp"
+                android:text="Android Studio"
+                android:textColor="@color/colorBlanco"
+                android:id="@+id/tv_nombre_usuario_main"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_marginLeft="120dp"
+                android:layout_marginTop="60dp"
+                android:textSize="20dp"
+                android:id="@+id/tv_correo_main"
+                android:textColor="@color/colorBlanco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="android.studio@android.com" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/m_btn_preguntas"
+                android:layout_width="150dp"
+                android:layout_height="140dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_forum_orange_40dp"
+                android:textColor="@color/colorPrimary" />
+
+            <Button
+                android:id="@+id/m_btn_canje"
+                android:layout_width="150dp"
+                android:layout_height="140dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/ic_shopping_cart_orange_40dp" />
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="         PREGUNTAS                      CANJE"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/m_btn_mis_preguntas"
+                android:layout_width="150dp"
+                android:layout_height="140dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_format_list_bulleted_orange_40dp" />
+
+            <Button
+                android:id="@+id/m_btn_guia"
+                android:layout_width="150dp"
+                android:layout_height="140dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/ic_content_paste_orange_40dp" />
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="     MIS PREGUNTAS                    GUIA"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@color/colorCeleste"
+        android:textColor="@color/colorBlanco"
+        android:layout_gravity="center"
+        android:id="@+id/btn_ir_a_agregar"
+        android:text="AGREGAR PREGUNTA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
