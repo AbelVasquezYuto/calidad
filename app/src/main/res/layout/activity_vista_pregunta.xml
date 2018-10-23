@@ -51,7 +51,7 @@
         <Button
             android:background="@color/colorCeleste"
             android:textColor="@color/colorBlanco"
-            android:layout_marginTop="210dp"
+            android:layout_marginTop="200dp"
             android:id="@+id/btn_vista_agregar_respuesta_pregunta"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"

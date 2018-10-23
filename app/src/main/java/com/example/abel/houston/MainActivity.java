@@ -105,7 +105,9 @@ public class MainActivity extends AppCompatActivity {
         buttonMisPreguntas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String elUsuario = (String) textUser.getText();
                 Intent intent = new Intent(getApplicationContext(),ActivityMisPreguntas.class);
+                intent.putExtra("ValorDelUsuario",elUsuario);
                 startActivity(intent);
             }
         });

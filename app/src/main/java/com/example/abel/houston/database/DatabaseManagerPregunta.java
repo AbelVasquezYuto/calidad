@@ -99,6 +99,31 @@ public class DatabaseManagerPregunta extends DatabaseManagerP{
         return list;
     }
 
+    public List<Pregunta> getPreguntaDelUsuario(String usuario){
+
+        List<Pregunta> list = new ArrayList<>();
+        Cursor c = cargarCursor();
+
+        while (c.moveToNext()){
+            Pregunta pregunta = new Pregunta();
+
+            if(usuario.equalsIgnoreCase(c.getString(4))){
+                pregunta.setId(c.getString(0));
+                pregunta.setTipo(c.getString(1));
+                pregunta.setDescripcion(c.getString(2));
+                pregunta.setBytes(c.getBlob(3));
+                pregunta.setUsuario(c.getString(4));
+                //usuario.setActive(false);
+
+                list.add(pregunta);
+            }
+        }
+
+        return list;
+    }
+
+
+
     public Pregunta getPregunta(String ident){
 
         Cursor c1 = super.getDb().rawQuery("SELECT _id, tipo, descripcion, imagen, usuario FROM demo2 WHERE _id" + "='" + ident+ "'", null);

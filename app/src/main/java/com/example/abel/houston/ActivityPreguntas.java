@@ -21,7 +21,7 @@ import java.util.List;
 
 public class ActivityPreguntas extends AppCompatActivity implements PreguntasAdapter.OnClienteItemClickListener{
 
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "ActivityPreguntas";
     private DatabaseManagerUser databaseManagerUser;
     private DatabaseManagerPregunta databaseManagerPregunta;
     private RecyclerView recyclerView;
