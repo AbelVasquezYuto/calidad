@@ -26,9 +26,15 @@ import java.util.List;
 public class PreguntasAdapter extends RecyclerView.Adapter<PreguntasAdapter.PreguntasViewHolder>{
 
     private List<Pregunta> preguntas;
+    private OnClienteItemClickListener onClienteItemClick;
+
+    public PreguntasAdapter(OnClienteItemClickListener onClienteItemClick){
+        this.onClienteItemClick =onClienteItemClick;
+    }
 
     public void addList(List<Pregunta> preguntas){
         this.preguntas = preguntas;
+        notifyDataSetChanged();
     }
 
 
@@ -41,10 +47,11 @@ public class PreguntasAdapter extends RecyclerView.Adapter<PreguntasAdapter.Preg
 
     @Override
     public void onBindViewHolder(PreguntasViewHolder holder, int position) {
-        Pregunta pregunta = preguntas.get(position);
-        holder.tvUser.setText("Usuario: "+pregunta.getUsuario());
-        holder.tvTipo.setText("Tipo de pregunta: "+pregunta.getTipo());
-        holder.tvDescripcion.setText("Descripcion: "+pregunta.getDescripcion());
+        final Pregunta pregunta = preguntas.get(position);
+
+        holder.tvUser.setText(pregunta.getUsuario());
+        holder.tvTipo.setText(pregunta.getTipo());
+        holder.tvDescripcion.setText(pregunta.getDescripcion());
 
         if(pregunta.getBytes()!=null){
             byte[] foodImage = pregunta.getBytes();
@@ -55,6 +62,14 @@ public class PreguntasAdapter extends RecyclerView.Adapter<PreguntasAdapter.Preg
             holder.ivFOTO.setImageResource(R.drawable.camara);
         }
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(onClienteItemClick!=null){
+                    onClienteItemClick.onItemClick(pregunta);
+                }
+            }
+        });
 
     }
 
@@ -79,5 +94,9 @@ public class PreguntasAdapter extends RecyclerView.Adapter<PreguntasAdapter.Preg
         }
     }
 
+    public interface OnClienteItemClickListener{
+        void onItemClick(Pregunta pregunta);// metodo para seleccionar la pregunta
+        //void onEditarClienteClick(Cliente cliente);//metodo para el click del boton editar
+    }
 
 }

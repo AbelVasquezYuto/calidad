@@ -98,4 +98,21 @@ public class DatabaseManagerPregunta extends DatabaseManagerP{
 
         return list;
     }
+
+    public Pregunta getPregunta(String ident){
+
+        Cursor c1 = super.getDb().rawQuery("SELECT _id, tipo, descripcion, imagen, usuario FROM demo2 WHERE _id" + "='" + ident+ "'", null);
+
+        Pregunta pregunta = new Pregunta();
+
+        c1.moveToNext();
+
+        pregunta.setId(c1.getString(0));
+        pregunta.setTipo(c1.getString(1));
+        pregunta.setDescripcion(c1.getString(2));
+        pregunta.setBytes(c1.getBlob(3));
+        pregunta.setUsuario(c1.getString(4));
+
+        return pregunta;
+    }
 }

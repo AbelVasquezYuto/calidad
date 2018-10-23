@@ -1,5 +1,6 @@
 package com.example.abel.houston;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -18,7 +19,7 @@ import com.example.abel.houston.entity.User;
 
 import java.util.List;
 
-public class ActivityPreguntas extends AppCompatActivity {
+public class ActivityPreguntas extends AppCompatActivity implements PreguntasAdapter.OnClienteItemClickListener{
 
     private static final String TAG = "MainActivity";
     private DatabaseManagerUser databaseManagerUser;
@@ -49,7 +50,7 @@ public class ActivityPreguntas extends AppCompatActivity {
             Log.i(TAG, e.toString());
         }*/
 
-        preguntasAdapter = new PreguntasAdapter();
+        preguntasAdapter = new PreguntasAdapter(this);
         preguntasAdapter.addList(preguntas);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -63,6 +64,14 @@ public class ActivityPreguntas extends AppCompatActivity {
         super.onResume();
         preguntas = databaseManagerPregunta.getPreguntasList();
         preguntasAdapter.addList(preguntas);
+    }
 
+    @Override
+    public void onItemClick(Pregunta pregunta) {
+        String id = pregunta.getId();
+        Intent intent = new Intent(getApplicationContext(),VistaPregunta.class);
+        intent.putExtra("IDPREGUNTA",id);
+        startActivity(intent);
+        //Toast.makeText(this, id, Toast.LENGTH_SHORT).show();
     }
 }

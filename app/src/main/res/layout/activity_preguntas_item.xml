@@ -22,6 +22,7 @@
     </LinearLayout> -->
 
     <LinearLayout
+        android:layout_marginTop="-10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -49,21 +50,47 @@
             android:layout_marginTop="15dp"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tv_user_preguntas_item"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"
+                    android:text="Usuario:  " />
+                <TextView
+                    android:id="@+id/tv_user_preguntas_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
 
-                android:text="ABEL" />
-
-            <TextView
-                android:id="@+id/tv_tipo_preguntas_item"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                    android:text="ABEL" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_marginTop="10dp"
-                android:gravity="center_horizontal"
-                android:text="VASQUEZ" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:gravity="center_horizontal"
+                    android:text="Tipo de Pregunta: " />
+                <TextView
+                    android:id="@+id/tv_tipo_preguntas_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="VASQUEZ" />
+            </LinearLayout>
+
+
+
         </LinearLayout>
     </LinearLayout>
 
@@ -73,6 +100,16 @@
         android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="left"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:textColor="@color/colorCeleste"
+            android:text="Descripcion:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <TextView
             android:layout_marginLeft="10dp"
