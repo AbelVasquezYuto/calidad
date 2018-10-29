@@ -7,8 +7,29 @@
     android:orientation="vertical"
     tools:context="com.example.abel.houston.ActivityPreguntas">
 
+    <Spinner
+        android:layout_marginTop="30dp"
+     android:id="@+id/sp_tipos_preguntas"
+     android:layout_width="200dp"
+     android:layout_height="wrap_content">
+
+     </Spinner>
+
+    <Button
+        android:layout_marginTop="20dp"
+
+        android:layout_toEndOf="@+id/sp_tipos_preguntas"
+        android:id="@+id/btn_buscar_preguntas"
+        android:background="@color/colorCeleste"
+        android:textColor="@color/colorBlanco"
+        android:text="BUSCAR"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content" />
+
+
     <android.support.v7.widget.RecyclerView
-        android:layout_marginTop="12dp"
+        android:layout_below="@+id/sp_tipos_preguntas"
+        android:layout_marginTop="50dp"
         android:id="@+id/rv_preguntas"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
