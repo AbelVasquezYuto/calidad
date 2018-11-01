@@ -7,7 +7,5 @@
     <color name="colorBlanco">#FFFFFF</color>
     <color name="colorNegro">#000000</color>
     <color name="iron">#CCCCCC</color>
-    <color name="colorPrimaryButton">#2b388e</color>
-    <color name="colorPrimaryDarkButton">#293583</color>
     <color name="colorLogin">#FFFFFF</color>
 </resources>

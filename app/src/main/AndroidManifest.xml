@@ -25,7 +25,9 @@
         <activity android:name=".ActivityAgregarPreguntas" />
         <activity android:name=".VistaPregunta" />
         <activity android:name=".ActivityAgregarRespuestas" />
-        <activity android:name=".VistaRespuesta"></activity>
+        <activity android:name=".VistaRespuesta" />
+        <activity android:name=".GuiaPregunta" />
+        <activity android:name=".GuiaRespuesta"></activity>
     </application>
 
 </manifest>

@@ -4,13 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo2"
     android:orientation="vertical"
     tools:context="com.example.abel.houston.ActivityGuia">
 
-    <TextView
-        android:gravity="center"
+    <Button
+        android:background="@color/colorCeleste"
+        android:textColor="@color/colorBlanco"
+        android:textSize="20dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/btn_ir_agregar_pregunta_guia"
+        android:text="COMO AGREGAR PREGUNTAS"
         android:layout_width="match_parent"
-        android:text="GUIA"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content" />
+
+
+    <Button
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorBlanco"
+        android:textSize="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/btn_ir_agregar_respuesta_guia"
+        android:text="COMO AGREGAR RESPUESTAS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

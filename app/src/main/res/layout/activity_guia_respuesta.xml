@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.example.abel.houston.GuiaRespuesta">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:text="PASO 1"
+                android:textSize="20dp"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:text="Seleeccionamos una pregunta."
+                android:textSize="17dp"
+                android:textColor="@color/colorCeleste"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="30dp"
+                android:layout_width="300dp"
+                android:layout_height="500dp"
+                android:src="@drawable/fondo_respuestaspregunta" />
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:text="PASO 2"
+                android:textSize="20dp"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:text="Presionamos en AGREGAR RESPUESTA."
+                android:textSize="17dp"
+                android:textColor="@color/colorCeleste"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="30dp"
+                android:layout_width="300dp"
+                android:layout_height="500dp"
+                android:src="@drawable/fondo_preguntas" />
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:text="PASO 3"
+                android:textSize="20dp"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:text="Podemos seleccionar una foto de nuestra galeria."
+                android:textSize="17dp"
+                android:textColor="@color/colorCeleste"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:text="Escribimos una descripcion."
+                android:textSize="17dp"
+                android:textColor="@color/colorCeleste"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:text="Por ultimo, damos click en agregar respuesta."
+                android:textSize="17dp"
+                android:textColor="@color/colorCeleste"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="30dp"
+                android:layout_width="300dp"
+                android:layout_height="500dp"
+                android:src="@drawable/fondo_respuesta" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
