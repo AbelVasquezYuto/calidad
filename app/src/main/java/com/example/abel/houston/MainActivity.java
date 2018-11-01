@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseManagerUser databaseManagerUser;
     private DatabaseManagerPregunta databaseManagerPregunta;
     private User itemUsuario;
-    private String ident;
+    private String ident,nomUsuario;
     private TextView textUser;
     private TextView textCorreo;
     private ImageView imagenUser;
@@ -56,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
 
         textUser.setText(itemUsuario.getNombre());
         textCorreo.setText(itemUsuario.getCorreo());
+
+        nomUsuario = itemUsuario.getNombre();
 
         Bitmap bitmapsinfoto = BitmapFactory.decodeResource(getResources(),R.drawable.imagen);
         RoundedBitmapDrawable roundedBitmapDrawablesinfoto = RoundedBitmapDrawableFactory.create(getResources(), bitmapsinfoto);
@@ -90,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(getApplicationContext(),ActivityPreguntas.class);
                 intent.putExtra("ValorDelCorreo",elCorreo);
+                intent.putExtra("ValorDelUsuario",nomUsuario);
                 startActivity(intent);
             }
         });

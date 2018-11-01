@@ -20,7 +20,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
-                android:id="@+id/imageView_preguntas"
+                android:id="@+id/imageView_respuestas_item"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:src="@drawable/camara"
@@ -48,7 +48,7 @@
                     android:textColor="@color/colorPrimary"
                     android:text="Usuario:  " />
                 <TextView
-                    android:id="@+id/tv_user_preguntas_item"
+                    android:id="@+id/tv_user_respuestas_item"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
@@ -66,17 +66,14 @@
                     android:textColor="@color/colorPrimary"
                     android:textStyle="bold"
                     android:gravity="center_horizontal"
-                    android:text="Tipo de Pregunta: " />
+                    android:text="Valoracion: " />
                 <TextView
-                    android:id="@+id/tv_tipo_preguntas_item"
+                    android:id="@+id/tv_valor_respuestas_item"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="VASQUEZ" />
+                    android:text="5" />
             </LinearLayout>
-
-
-
         </LinearLayout>
     </LinearLayout>
 
@@ -93,15 +90,15 @@
             android:textStyle="bold"
             android:textSize="15dp"
             android:textColor="@color/colorCeleste"
-            android:text="Descripcion:"
+            android:text="Respuesta:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <TextView
             android:layout_marginLeft="10dp"
             android:layout_gravity="left"
-            android:text="Aqui va toda la descripcion"
-            android:id="@+id/tv_descripcion_preguntas_item"
+            android:text="Aqui va toda la repuesta"
+            android:id="@+id/tv_descripcion_respuestas_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 

@@ -4,16 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBlanco"
     android:orientation="vertical"
-    tools:context="com.example.abel.houston.VistaPregunta">
+    tools:context="com.example.abel.houston.VistaRespuesta">
 
     <ImageView
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:layout_width="250dp"
-        android:layout_height="200dp"
-        android:id="@+id/iv_vista_pregunta_imagen"
+        android:layout_marginTop="50dp"
+        android:layout_width="320dp"
+        android:layout_height="250dp"
+        android:id="@+id/iv_vista_respuesta_imagen"
         android:src="@drawable/camara"
         android:scaleType="centerCrop"/>
 
@@ -22,21 +21,23 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TextView
+            android:layout_marginTop="20dp"
             android:textColor="@color/colorPrimary"
             android:textSize="20dp"
-            android:text="Descripcion:"
+            android:text="Puntuacion:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/tv_vista_descripcion_pregunta"
+            android:layout_marginTop="10dp"
+            android:id="@+id/tv_vista_puntuacion_respuesta"
             android:textColor="@color/colorNegro"
             android:textSize="15dp"
-            android:text="Aqui va la descripcion "
+            android:text="5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
@@ -44,24 +45,27 @@
             android:layout_marginTop="10dp"
             android:textColor="@color/colorPrimary"
             android:textSize="20dp"
-            android:text="Respuestas:"
+            android:text="Respuesta:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-        <android.support.v7.widget.RecyclerView
-            android:layout_marginTop="12dp"
-            android:id="@+id/rv_respuestas"
-            android:layout_width="match_parent"
-            android:layout_height="230dp"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/tv_vista_descripcion_respuesta"
+            android:textColor="@color/colorNegro"
+            android:textSize="15dp"
+            android:text="Aqui va la descripcion "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <Button
             android:background="@color/colorCeleste"
             android:textColor="@color/colorBlanco"
-            android:layout_marginTop="20dp"
-            android:id="@+id/btn_vista_agregar_respuesta_pregunta"
+            android:layout_marginTop="80dp"
+            android:id="@+id/btn_vista_agregar_puntuacion"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
-            android:text="AGREGAR RESPUESTA"
+            android:text="PUNTUAR RESPUESTA"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

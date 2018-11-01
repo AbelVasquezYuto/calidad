@@ -28,7 +28,7 @@ public class ActivityPreguntas extends AppCompatActivity implements PreguntasAda
     private DatabaseManagerUser databaseManagerUser;
     private DatabaseManagerPregunta databaseManagerPregunta;
     private Spinner spinnerTipoPregunta;
-    private String valorTipoPregunta;
+    private String valorTipoPregunta,valorUsuario;
     private Button btnBuscarPregunta;
     private RecyclerView recyclerView;
     private PreguntasAdapter preguntasAdapter;
@@ -39,6 +39,10 @@ public class ActivityPreguntas extends AppCompatActivity implements PreguntasAda
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preguntas);
+
+        Bundle b = getIntent().getExtras();
+
+        valorUsuario = b.getString("ValorDelUsuario");
 
         recyclerView = (RecyclerView) findViewById(R.id.rv_preguntas);
 
@@ -57,11 +61,6 @@ public class ActivityPreguntas extends AppCompatActivity implements PreguntasAda
         }
 
         databaseManagerPregunta = new DatabaseManagerPregunta(getApplicationContext());
-        /*
-        List<Pregunta> preguntaList = databaseManagerPregunta.getPreguntasList();
-        for (Pregunta e : preguntaList) {
-            Log.i(TAG, e.toString());
-        }*/
 
         preguntasAdapter = new PreguntasAdapter(this);
         preguntasAdapter.addList(preguntas);
@@ -91,8 +90,8 @@ public class ActivityPreguntas extends AppCompatActivity implements PreguntasAda
         String id = pregunta.getId();
         Intent intent = new Intent(getApplicationContext(),VistaPregunta.class);
         intent.putExtra("IDPREGUNTA",id);
+        intent.putExtra("nomUsuarioXD",valorUsuario);
         startActivity(intent);
-        //Toast.makeText(this, id, Toast.LENGTH_SHORT).show();
     }
 
     public void buscarPregunta(){
@@ -101,7 +100,7 @@ public class ActivityPreguntas extends AppCompatActivity implements PreguntasAda
         preguntasTipo = databaseManagerPregunta.getPreguntaPorTipo(valorTipoPregunta);
 
         if(preguntasTipo.isEmpty()){
-            Toast.makeText(this, "No se encontro preguntas de este tipo", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "No se encontraron preguntas de este tipo", Toast.LENGTH_SHORT).show();
         }
         else{
 
