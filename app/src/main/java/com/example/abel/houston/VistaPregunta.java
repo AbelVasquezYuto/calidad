@@ -119,6 +119,7 @@ public class VistaPregunta extends AppCompatActivity implements RespuestasAdapte
         String id = respuesta.getId();
         Intent intent = new Intent(getApplicationContext(),VistaRespuesta.class);
         intent.putExtra("IDRESPUESTA",id);
+        intent.putExtra("IdUSUARIO",idUsuarioPregunta);
         startActivity(intent);
     }
 }

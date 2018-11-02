@@ -59,6 +59,21 @@ public class DatabaseManagerRespuesta extends DatabaseManagerR{
         Log.d("respuesta_insertar", super.getDb().insert(NOMBRE_TABLA,null,generarContentValues(id, idP, descripcion, imagen, usuario,valoracion))+"");
     }
 
+    public void actualizar_parametros(String id, String idP, String descripcion, byte[] imagen, String usuario, String valoracion) {
+
+        ContentValues valores = new ContentValues();
+        valores.put(CN_ID, id);
+        valores.put(CN_ID_P, idP);
+        valores.put(CN_DESCRIPCION, descripcion);
+        valores.put(CN_IMAGE, imagen);
+        valores.put(CN_USER, usuario);
+        valores.put(CN_VALORACION, valoracion);
+
+        String [] args = new String[]{id};
+
+        Log.d("actualizar", super.getDb().update(NOMBRE_TABLA, valores,"_ID=?", args)+"");
+    }
+
 
 
     @Override

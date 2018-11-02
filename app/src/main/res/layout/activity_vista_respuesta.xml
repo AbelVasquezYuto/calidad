@@ -58,10 +58,48 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
+        <LinearLayout
+            android:layout_gravity="center"
+            android:paddingTop="20dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp">
+
+            <CheckBox
+
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                style="?android:attr/starStyle"
+                android:id="@+id/chb1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:layout_marginLeft="10dp"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                style="?android:attr/starStyle"
+                android:id="@+id/chb2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:layout_marginLeft="10dp"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                style="?android:attr/starStyle"
+                android:id="@+id/chb3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
         <Button
             android:background="@color/colorCeleste"
             android:textColor="@color/colorBlanco"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="10dp"
             android:id="@+id/btn_vista_agregar_puntuacion"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
