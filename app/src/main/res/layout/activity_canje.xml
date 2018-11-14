@@ -8,9 +8,12 @@
     tools:context="com.example.abel.houston.ActivityCanje">
 
     <TextView
-        android:gravity="center"
-        android:text="CANJE"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="1dp"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerid"
+        android:layout_width="match_parent"
+        android:layout_height="567dp" />
 
 </LinearLayout>
