@@ -7,13 +7,12 @@
     android:orientation="vertical"
     tools:context="com.example.abel.houston.ActivityCanje">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"/>
 
     <android.support.v7.widget.RecyclerView
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
         android:id="@+id/recyclerid"
         android:layout_width="match_parent"
-        android:layout_height="567dp" />
+        android:layout_height="match_parent" />
 
 </LinearLayout>

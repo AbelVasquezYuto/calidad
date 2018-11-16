@@ -11,9 +11,12 @@ import com.example.abel.houston.entity.Canje;
 
 import java.util.ArrayList;
 
-public class ActivityCanjeAdapter extends RecyclerView.Adapter<ActivityCanjeAdapter.ViewHolderDatos> {
+public class ActivityCanjeAdapter
+        extends RecyclerView.Adapter<ActivityCanjeAdapter.ViewHolderDatos>
+            implements View.OnClickListener{
 
     ArrayList<Canje> listCanje;
+    private View.OnClickListener listener;
 
     public ActivityCanjeAdapter(ArrayList<Canje> listCanje) {
         this.listCanje = listCanje;
@@ -22,6 +25,9 @@ public class ActivityCanjeAdapter extends RecyclerView.Adapter<ActivityCanjeAdap
     @Override
     public ViewHolderDatos onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_canje_item, null, false);
+
+        view.setOnClickListener(this);
+
         return new ViewHolderDatos(view);
     }
 
@@ -35,6 +41,18 @@ public class ActivityCanjeAdapter extends RecyclerView.Adapter<ActivityCanjeAdap
     @Override
     public int getItemCount() {
         return listCanje.size();
+    }
+
+    public void setOnClickListener(View.OnClickListener listener){
+        this.listener = listener;
+    }
+
+
+    @Override
+    public void onClick(View view) {
+        if(listener!=null){
+            listener.onClick(view);
+        }
     }
 
     public class ViewHolderDatos extends RecyclerView.ViewHolder {
