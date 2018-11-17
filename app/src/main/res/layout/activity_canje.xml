@@ -7,8 +7,36 @@
     android:orientation="vertical"
     tools:context="com.example.abel.houston.ActivityCanje">
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:background="@color/colorCeleste"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:textSize="30dp"
+            android:textColor="@color/colorBlanco"
+            android:textStyle="bold"
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="280dp"
+            android:id="@+id/tv_canje"
+            android:text="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/iv_coins"
+            android:src="@drawable/coins"
+           />
+
+    </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
+
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:id="@+id/recyclerid"

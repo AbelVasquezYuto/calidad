@@ -12,25 +12,41 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.abel.houston.database.DatabaseManagerMonedas;
+import com.example.abel.houston.database.DatabaseManagerValoracion;
 import com.example.abel.houston.entity.Canje;
+import com.example.abel.houston.entity.Moneda;
 
 import java.util.ArrayList;
 
 public class ActivityCanje extends AppCompatActivity {
+
+    private static final String TAG = "ActivityCanje";
 
     ArrayList<Canje> listCanje;
     RecyclerView recyclerCanje;
     DownloadManager dm;
     long queveid;
     String nombreURLs="";
+    private DatabaseManagerMonedas databaseManagerMonedas;
+    private Moneda itemMoneda;
+
+    private String valorUsu;
+
+    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_canje);
+
+        textView = (TextView) findViewById(R.id.tv_canje);
 
         listCanje = new ArrayList<>();
         recyclerCanje = (RecyclerView) findViewById(R.id.recyclerid);
@@ -46,6 +62,7 @@ public class ActivityCanje extends AppCompatActivity {
 
                 String nombre = "";
                 nombre = listCanje.get(recyclerCanje.getChildAdapterPosition(view)).getUrlCanje();
+
                 descargarSolucionario(nombre);
 
             }
@@ -64,7 +81,22 @@ public class ActivityCanje extends AppCompatActivity {
             }
         };
 
-        registerReceiver(receiver,new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+        //registerReceiver(receiver,new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+
+        Bundle b = getIntent().getExtras();
+
+        valorUsu = b.getString("ValorDelUsuario");
+
+        Log.i(TAG,valorUsu);
+
+        databaseManagerMonedas = new DatabaseManagerMonedas(getApplicationContext());
+
+        if(databaseManagerMonedas.comprobarExisteUsuario(valorUsu)){
+            itemMoneda = databaseManagerMonedas.getMoneda(valorUsu);
+            textView.setText(itemMoneda.getMonedas());
+        }else{
+
+        }
 
     }
 
@@ -127,10 +159,34 @@ public class ActivityCanje extends AppCompatActivity {
                 .setPositiveButton("SI", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        dm = (DownloadManager)getSystemService(DOWNLOAD_SERVICE);
-                        DownloadManager.Request request = new DownloadManager.Request(Uri.parse(nombreURLs));
-                        queveid = dm.enqueue(request);
-                        Toast.makeText(ActivityCanje.this, "Se ha descargado el solucionario", Toast.LENGTH_SHORT).show();
+
+                        if(databaseManagerMonedas.comprobarExisteUsuario(valorUsu)){
+                            itemMoneda = databaseManagerMonedas.getMoneda(valorUsu);
+                            int valor = Integer.parseInt(itemMoneda.getMonedas());
+                            if(valor>=1){
+
+                                dm = (DownloadManager)getSystemService(DOWNLOAD_SERVICE);
+                                DownloadManager.Request request = new DownloadManager.Request(Uri.parse(nombreURLs));
+                                queveid = dm.enqueue(request);
+
+                                valor = valor-1;
+                                databaseManagerMonedas.actualizar_parametros(itemMoneda.getId(),itemMoneda.getUser(),valor+"");
+                                textView.setText(valor+"");
+
+                                Toast.makeText(ActivityCanje.this, "Se ha descargado el solucionario", Toast.LENGTH_SHORT).show();
+
+                            }else{
+                                Toast.makeText(ActivityCanje.this, "No cuentas con monedas suficientes", Toast.LENGTH_SHORT).show();
+                            }
+
+                        }else{
+                            Toast.makeText(ActivityCanje.this, "No cuentas con monedas suficientes", Toast.LENGTH_SHORT).show();
+                        }
+
+
+
+
+
 
                     }
                 })
@@ -145,6 +201,18 @@ public class ActivityCanje extends AppCompatActivity {
         alertDialog.show();
 
     }
+
+    /*
+    public void comprarSolucionario(){
+        Log.i(TAG,"COMPRO DEL WE");
+        if(databaseManagerMonedas.comprobarExisteUsuario(valorUsu)){
+            itemMoneda = databaseManagerMonedas.getMoneda(valorUsu);
+            textView.setText(itemMoneda.getMonedas());
+        }else{
+            Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
+        }
+
+    }*/
 
 
 

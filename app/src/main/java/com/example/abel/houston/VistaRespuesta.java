@@ -15,8 +15,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.abel.houston.database.DatabaseManagerMonedas;
 import com.example.abel.houston.database.DatabaseManagerRespuesta;
 import com.example.abel.houston.database.DatabaseManagerValoracion;
+import com.example.abel.houston.entity.Moneda;
 import com.example.abel.houston.entity.Respuesta;
 
 public class VistaRespuesta extends AppCompatActivity {
@@ -33,7 +35,11 @@ public class VistaRespuesta extends AppCompatActivity {
     private CheckBox checkBox1,checkBox2,checkBox3;
     private Button buttonPuntuacion;
 
+    private Moneda itemMoneda;
+    private String usuarioMoneda;
+
     private DatabaseManagerValoracion databaseManagerValoracion;
+    private DatabaseManagerMonedas databaseManagerMonedas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,9 +78,6 @@ public class VistaRespuesta extends AppCompatActivity {
 
         elIDR = itemRespuesta.getId();
 
-
-
-
         Bitmap bitmapsinfoto = BitmapFactory.decodeResource(getResources(),R.drawable.camara);
         RoundedBitmapDrawable roundedBitmapDrawablesinfoto = RoundedBitmapDrawableFactory.create(getResources(), bitmapsinfoto);
         roundedBitmapDrawablesinfoto.setCircular(true);
@@ -111,8 +114,9 @@ public class VistaRespuesta extends AppCompatActivity {
             }
         });
 
-
         valorRespuesta = itemRespuesta.getValoracion();
+        usuarioMoneda = itemRespuesta.getUsuario();
+
 
 
 
@@ -126,6 +130,10 @@ public class VistaRespuesta extends AppCompatActivity {
         int p=0;
 
         databaseManagerValoracion = new DatabaseManagerValoracion(getApplicationContext());
+
+        databaseManagerMonedas = new DatabaseManagerMonedas(getApplicationContext());
+
+       // databaseManagerMonedas.insertar_parametros(null,"","");
 
         if(databaseManagerValoracion.comprobarValoracion(elIDR,elUsuario)){
 
@@ -146,7 +154,7 @@ public class VistaRespuesta extends AppCompatActivity {
             if(checkBox3.isChecked()){
                 checkBox1.setChecked(true);
                 checkBox2.setChecked(true);
-                p=valor+3;
+                p=3;
 
             }
 
@@ -157,6 +165,25 @@ public class VistaRespuesta extends AppCompatActivity {
             databaseManagerRespuesta.actualizar_parametros(identRespuesta,itemRespuesta.getIdPregunta(),itemRespuesta.getDescripcion(),itemRespuesta.getBytes(),itemRespuesta.getUsuario(),valor+"");
 
             Toast.makeText(this, "Usted ha calificado la respuesta", Toast.LENGTH_SHORT).show();
+
+            Log.i(TAG,usuarioMoneda);
+
+            if(databaseManagerMonedas.comprobarExisteUsuario(usuarioMoneda)){
+
+                itemMoneda = databaseManagerMonedas.getMoneda(usuarioMoneda);
+                int pruebaM = Integer.parseInt(itemMoneda.getMonedas());
+
+                pruebaM = pruebaM+p;
+                Log.i(TAG,p+" puntos");
+
+                databaseManagerMonedas.actualizar_parametros(itemMoneda.getId(),itemMoneda.getUser(),pruebaM+"");
+
+                Log.i(TAG,"se actualiza nuevo valor "+pruebaM);
+
+            }else{
+                databaseManagerMonedas.insertar_parametros(null,usuarioMoneda,p+"");
+                Log.i(TAG,"se registra"+"puntos "+p+"");
+            }
 
         }
 
