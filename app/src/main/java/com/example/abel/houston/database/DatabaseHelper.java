@@ -4,11 +4,13 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
+
 /**
  * Created by ABEL on 13/10/2018.
  */
 
-public class DatabaseHelper extends SQLiteOpenHelper {
+public class DatabaseHelper extends SQLiteAssetHelper {
 
     private static final String DB_NOMBRE = "houston.sqlite";
     private static int DB_SCHEME_VERSION = 1;
@@ -17,18 +19,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         super(context,DB_NOMBRE,null,DB_SCHEME_VERSION);
     }
 
-    @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL(DatabaseManagerUser.CREATE_TABLE);
-        sqLiteDatabase.execSQL(DatabaseManagerPregunta.CREATE_TABLE);
-        sqLiteDatabase.execSQL(DatabaseManagerRespuesta.CREATE_TABLE);
-        sqLiteDatabase.execSQL(DatabaseManagerValoracion.CREATE_TABLE);
-        sqLiteDatabase.execSQL(DatabaseManagerMonedas.CREATE_TABLE);
-    }
-
+    /*
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS"+DB_NOMBRE);
         onCreate(sqLiteDatabase);
-    }
+    }*/
 }
